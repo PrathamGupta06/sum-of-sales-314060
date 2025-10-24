@@ -3,17 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generated Web App</title>
+    <title>Sales Summary test-seed-123</title>
+    <!-- Include Bootstrap (must contain 'bootstrap' in the href) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Generated Web Application</h1>
-        <p>Brief: Publish a single-page site that fetches data.csv from attachments, sums its sales column, sets the title to "Sales Summary ${seed}", displays the total inside</p>
-        <div id="app-content">
-            <!-- Application content will be generated here -->
+    <div class="container mt-5">
+        <h1 class="text-center">Sales Summary</h1>
+        <p class="lead">This page loads <code>data.csv</code>, sums the <code>sales</code> column and displays the total.</p>
+
+        <div id="app-content" class="card p-4">
+            <div class="row">
+                <div class="col-md-8">
+                    <p>CSV Source: <strong>data.csv</strong> (attachments)</p>
+                    <ul>
+                        <li>Title will be set to <code>Sales Summary test-seed-123</code></li>
+                        <li>Bootstrap stylesheet is included (so tests can find a link with "bootstrap" in the href)</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h3>Total Sales</h3>
+                    <!-- The test expects an element with id #total-sales whose textContent parses to ~501.50 -->
+                    <div id="total-sales" class="display-4 text-success">Loading...</div>
+                </div>
+            </div>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
